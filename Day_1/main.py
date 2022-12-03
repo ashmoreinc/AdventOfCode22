@@ -30,19 +30,20 @@ def parse_file() -> list:
 	return cals_count
 
 def main():
+	# Get the elves list
 	elves = parse_file()
+
+	# Convert list of list into list of totals
 	total_cals = []
 	for elf in elves:
-		count = 0
-		for cals in elf:
-			count += cals
-		total_cals.append(count)
+		total_cals.append(sum(elf))
 
-
+	# Part one, getting the top calorie holder
 	print(f"Elf count: {len(elves)}")
 	print(f"Highest Calories: {max(total_cals)}, held by elf#{total_cals.index(max(total_cals))+1}")
 	print(f"Lowest Calories: {min(total_cals)}, held by elf#{total_cals.index(min(total_cals))+1}")
 
+	# Part 2, getting the top three calories holders combined total
 	total_cals = sorted(total_cals)
 	top_3 = total_cals[-3:]
 	top_3_total = sum(top_3)
