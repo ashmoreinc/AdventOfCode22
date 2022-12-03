@@ -33,6 +33,10 @@ def main():
 	# Get the elves list
 	elves = parse_file()
 
+	if elves is None:
+		print("Exitting, failed to read.")
+		return
+
 	# Convert list of list into list of totals
 	total_cals = []
 	for elf in elves:
