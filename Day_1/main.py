@@ -1,7 +1,7 @@
 INPUT_FILE = "input.txt"
 
 
-def parse_file() -> list:
+def parse_input() -> list:
 	cals_count = []
 
 	try:
@@ -31,7 +31,7 @@ def parse_file() -> list:
 
 def main():
 	# Get the elves list
-	elves = parse_file()
+	elves = parse_input()
 
 	if elves is None:
 		print("Exitting, failed to read.")
